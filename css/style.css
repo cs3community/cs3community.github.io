@@ -1,0 +1,17 @@
+/*.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+*/
+
+.navbar {
+  padding-top: 2rem;
+}
+.navbar-item img {
+  max-height: 4rem;
+}

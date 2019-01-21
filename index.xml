@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on CS3 Community</title>
+    <link>https://cs3community.github.io/</link>
+    <description>Recent content in Home on CS3 Community</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright CS3 Community</copyright>
+    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cs3community.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
