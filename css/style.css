@@ -19,3 +19,7 @@
 #worldmap {
   box-shadow: none;
 }
+
+.card-image img {
+  object-fit: cover;
+}
