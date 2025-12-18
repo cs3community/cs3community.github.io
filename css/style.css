@@ -23,3 +23,51 @@
 .card-image img {
   object-fit: cover;
 }
+
+@media screen and (min-width:769px) and (max-width:1090px) {
+  .column.is-one-third, .column.is-one-third-tablet {
+    width: 100% !important;
+  }
+}
+
+.current-edition {
+  background-image: url(/images/conf-oslo-2026.jpeg); 
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.current-edition .columns {
+  justify-content:flex-end;
+}
+
+.current-edition .card {
+  background-color: rgba(255, 255, 255, 0.7)
+}
+
+.current-edition .card-footer {
+  background-color: rgba(255, 255, 255, 0.5)
+}
+
+@media screen and (min-width:1000px) {
+  .img-fluid {
+    max-width: 1000px
+  }
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-image img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-footer {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
