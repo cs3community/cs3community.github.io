@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OCM Test Suite</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- Hero Section -->
+<section class="hero-section" id="heroSection">
+  <div class="container">
+    <!-- Main Content -->
+    <div class="hero-content">
+      <div class="hero-main">
+        <h1 class="hero-title">
+          <span class="gradient-text">Open Cloud Mesh</span>
+        </h1>
+        <p>&nbsp;</p>
+        <p class="hero-subtitle" style="text-align: center;">
+          Open Cloud Mesh (OCM) is a server federation protocol that is used to notify a Receiving Party that they have been granted access to some Resource.
+        </p>
+      </div>
+
+      
+      <div class="resource-cards">
+        
+        <a
+          href="https://github.com/cs3org/OCM-API"
+          class="resource-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="resource-card__icon">
+            <img src="./images/links/github.svg" alt="GitHub Logo" />
+          </div>
+          <div class="resource-card__content">
+            <h3>OCM API</h3>
+            <p>View the specification</p>
+          </div>
+        </a>
+
+        
+        <a
+          href="https://datatracker.ietf.org/doc/draft-ietf-ocm-open-cloud-mesh"
+          class="resource-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="resource-card__icon">
+            <img src="./images/links/ietf.svg" alt="IETF Logo" />
+          </div>
+          <div class="resource-card__content">
+            <h3>IETF Draft</h3>
+            <p>Read the standard</p>
+          </div>
+        </a>
+
+        
+        <a
+          href="https://reva.link/"
+          class="resource-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="resource-card__icon">
+            <img src="./images/links/reva.svg" alt="Reva Logo" />
+          </div>
+          <div class="resource-card__content">
+            <h3>Reva Project</h3>
+            <p>The OCM reference implementation</p>
+          </div>
+        </a>
+
+        
+        <a
+          href="https://datatracker.ietf.org/wg/ocm/about"
+          class="resource-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="resource-card__icon">
+            <img src="./images/links/ietf.svg" alt="IETF Logo" />
+          </div>
+          <div class="resource-card__content">
+            <h3>IETF Working Group</h3>
+            <p>Join standardization</p>
+          </div>
+        </a>
+
+        
+        <a
+          href="https://www.cs3community.org"
+          class="resource-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="resource-card__icon">
+            <img src="./images/links/cs3.png" alt="CS3 Logo" />
+          </div>
+          <div class="resource-card__content">
+            <h3>CS3 Community</h3>
+            <p>Join the cloud storage sync & share community</p>
+          </div>
+        </a>
+
+        
+        <a
+          href="https://matrix.to/#/#cs3org_OCM:gitter.im"
+          class="resource-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="resource-card__icon">
+            <img src="./images/links/matrix.svg" alt="Matrix Logo" />
+          </div>
+          <div class="resource-card__content">
+            <h3>Matrix Chat</h3>
+            <p>Join discussions</p>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="scroll-indicator" id="scrollDown">
+        <div class="scroll-line"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="hero-background">
+    <div class="gradient-circle"></div>
+    <div class="pattern-grid">
+      <canvas id="gridCanvas" aria-hidden="true"></canvas>
+    </div>
+  </div>
+</section>
+
+<section class="partners-section" id="partnersSection">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fas fa-handshake"></i>
+        <span>Ecosystem</span>
+      </div>
+      <h2>Our Partners & Sponsors</h2>
+      <p>
+        Organizations shaping and supporting the future of open-source file
+        sharing through development, infrastructure, and funding
+      </p>
+    </div>
+
+    <div class="partners-tabs">
+      <div class="tab active" data-tab="collaborators">Collaborators</div>
+      <div class="tab" data-tab="sponsors">Sponsors</div>
+    </div>
+
+    <div class="partners-container">
+      <div class="partners-grid active" id="collaboratorsGrid">
+        <div class="partner-card" data-partner="pondersource">
+          <a
+            href="https://pondersource.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./images/collaborators/pondersource.jpeg"
+              alt="PonderSource Logo"
+            />
+          </a>
+          <div class="partner-content">
+            <div class="partner-info">
+              <h3>Ponder Source</h3>
+              <p>
+                A non-profit foundation pioneering Federated Sharing, Federated
+                Bookkeeping, and Bring-your-own-Data architectures. Leading the
+                development and standardization of OCM protocols.
+              </p>
+            </div>
+            <div class="contribution-tags">
+              <span class="tag">API Design</span>
+              <span class="tag">Implementation</span>
+              <span class="tag">Test Suite</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card" data-partner="cern">
+          <!-- <span class="partner-type">Infrastructure Partner</span> -->
+          <a
+            href="https://home.cern"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo-cern"
+          >
+            <img src="./images/collaborators/cern.svg" alt="CERN Logo" />
+          </a>
+          <div class="partner-content">
+            <div class="partner-info">
+              <h3>CERN</h3>
+              <p>
+                World's leading particle physics laboratory providing
+                cutting-edge infrastructure and expertise in large-scale data
+                sharing solutions for scientific collaboration.
+              </p>
+            </div>
+            <div class="contribution-tags">
+              <span class="tag">API Design</span>
+              <span class="tag">Implementation</span>
+              <span class="tag">Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card" data-partner="sunet">
+          <a
+            href="https://www.sunet.se"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img src="./images/collaborators/sunet.png" alt="SUNET Logo" />
+          </a>
+          <div class="partner-content">
+            <div class="partner-info">
+              <h3>SUNET</h3>
+              <p>
+                Swedish University Network driving OCM adoption and development
+                in educational institutions, ensuring seamless integration with
+                academic workflows.
+              </p>
+            </div>
+            <div class="contribution-tags">
+              <span class="tag">API Design</span>
+              <span class="tag">Implementation</span>
+              <span class="tag">Education</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-grid hidden" id="sponsorsGrid">
+        <div class="partner-card" data-partner="geant">
+          <span class="partner-type">Sponsor</span>
+          <a
+            href="https://geant.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img src="./images/sponsors/geant.svg" alt="GÉANT Logo" />
+          </a>
+          <div class="partner-content">
+            <div class="partner-info">
+              <h3>GÉANT</h3>
+              <p>
+                Europe's leading collaboration on network and related
+                infrastructure, connecting researchers, educators, and
+                innovators globally.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card" data-partner="sciencemesh">
+          <span class="partner-type">Sponsor</span>
+          <a
+            href="https://sciencemesh.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./images/sponsors/sciencemesh.svg"
+              alt="ScienceMesh Logo"
+            />
+          </a>
+          <div class="partner-content">
+            <div class="partner-info">
+              <h3>ScienceMesh</h3>
+              <p>
+                Building the federated science cloud mesh, connecting research
+                institutions and enabling seamless data sharing across borders.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card" data-partner="nlnet">
+          <span class="partner-type">Sponsor</span>
+          <a
+            href="https://nlnet.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img src="./images/sponsors/nlnet.svg" alt="NLnet Logo" />
+          </a>
+          <div class="partner-content">
+            <div class="partner-info">
+              <h3>NLnet</h3>
+              <p>
+                Supporting organizations and individuals that contribute to an
+                open information society, fostering innovation in technology.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card" data-partner="sta">
+          <span class="partner-type">Sponsor</span>
+          <a
+            href="https://www.sovereign.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./images/sponsors/STA-Logo-Default-Black-RGB.svg"
+              alt="Sovereign Tech Agency Logo"
+              class="sta-logo-primary"
+            />
+            <img
+              src="./images/sponsors/ST-Fund-Logo-Default-Black-RGB.svg"
+              alt=""
+              aria-hidden="true"
+              class="sta-logo-hover"
+            />
+          </a>
+          <div class="partner-content">
+            <div class="partner-info">
+              <h3>Sovereign Tech Agency</h3>
+              <p>
+                Investing in open digital infrastructure through the Sovereign
+                Tech Fund, supporting critical open source projects and
+                maintainers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-section" id="infoSection">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fas fa-layer-group"></i>
+        <span>Framework</span>
+      </div>
+      <h2>OCM Testing Framework</h2>
+      <p>Comprehensive testing framework ensuring robust OCM protocol implementation across multiple platforms</p>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="info-grid">
+      <!-- Test Categories Card -->
+      <div class="feature-card main-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div>
+            <span class="category-badge">Core Features</span>
+            <h3>Test Categories</h3>
+            <p>Comprehensive test scenarios validating cross-platform communication</p>
+          </div>
+        </div>
+
+        <div class="test-categories">
+          <div class="category">
+            <div class="category-icon login">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
+              </svg>
+            </div>
+            <div class="category-content">
+              <div class="category-header">
+                <h4>Login Tests</h4>
+                <div class="status-pills">
+                  <span class="pill">6 Tests</span>
+                  <span class="pill highlight">Platform Specific</span>
+                </div>
+              </div>
+              <p>Authentication and session management verification across platforms</p>
+              <div class="category-features">
+                <span>User Authentication</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="category">
+            <div class="category-icon share">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13" />
+              </svg>
+            </div>
+            <div class="category-content">
+              <div class="category-header">
+                <h4>Share Tests</h4>
+                <div class="status-pills">
+                  <span class="pill">27 Tests</span>
+                  <span class="pill highlight">Cross Platform</span>
+                </div>
+              </div>
+              <p>Comprehensive testing of file and folder sharing capabilities</p>
+              <div class="category-features">
+                <span>File Sharing</span>
+                <span>Folder Access</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="category">
+            <div class="category-icon invite">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM20 8v6M23 11h-6" />
+              </svg>
+            </div>
+            <div class="category-content">
+              <div class="category-header">
+                <h4>Invite Tests</h4>
+                <div class="status-pills">
+                  <span class="pill">9 Tests</span>
+                  <span class="pill highlight">Bidirectional</span>
+                </div>
+              </div>
+              <p>Testing user invitation workflows and acceptance processes</p>
+              <div class="category-features">
+                <span>User Invitations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platforms Card -->
+      <div class="feature-card platforms-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+            </svg>
+          </div>
+          <div>
+            <span class="category-badge">Compatibility</span>
+            <h3>Supported Platforms</h3>
+            <p>Ensuring broad compatibility across major EFSS implementations</p>
+          </div>
+        </div>
+
+        <div class="platforms-showcase">
+          <div class="platform">
+            <a href="https://nextcloud.com" target="_blank" rel="noopener noreferrer" class="platform-logo">
+              <img src="./images/platforms/nextcloud.svg" alt="Nextcloud Logo">
+            </a>
+            <span>Nextcloud</span>
+          </div>
+          <div class="platform">
+            <a href="https://owncloud.com" target="_blank" rel="noopener noreferrer" class="platform-logo">
+              <img src="./images/platforms/owncloud.svg" alt="ownCloud Logo">
+            </a>
+            <span>ownCloud</span>
+          </div>
+          <div class="platform">
+            <a href="https://owncloud.dev/ocis/" target="_blank" rel="noopener noreferrer" class="platform-logo">
+              <img src="./images/platforms/ocis.png" alt="oCIS Logo">
+            </a>
+            <span>oCIS</span>
+          </div>
+          <div class="platform">
+            <a href="https://cernbox.web.cern.ch" target="_blank" rel="noopener noreferrer" class="platform-logo">
+              <img src="./images/platforms/cernbox.svg" alt="CERNBox Logo">
+            </a>
+            <span>CERNBox</span>
+          </div>
+          <div class="platform">
+            <a href="https://www.seafile.com" target="_blank" rel="noopener noreferrer" class="platform-logo">
+              <img src="./images/platforms/seafile.svg" alt="Seafile Logo">
+            </a>
+            <span>Seafile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    
+    <!-- Add these at the bottom before closing body tag -->
+    <script type="module" src="./js/main.js"></script> 
+
+    <template id="error-message-template">
+      <div class="error-message">
+        <p class="error-text"></p>
+        <button class="retry-button">Try Again</button>
+      </div>
+    </template>
+
+    <template id="loading-spinner-template">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+    </template>
+</body>
+</html>
