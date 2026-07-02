@@ -1,0 +1,4 @@
+{{ with resources.Get "js/site.js" }}
+  {{ $js := . | resources.Fingerprint "sha256" }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

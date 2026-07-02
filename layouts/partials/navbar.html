@@ -1,0 +1,26 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/site/cs3-logo.png" width="240" height="28" alt="CS3 Community">
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="navbarMain">
+      <div class="navbar-start"></div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="mailto:{{ .Site.Params.subscribeEmail }}?subject=Please add me to conference mailing list">Subscribe me to conference news!</a>
+        </div>
+        <div class="navbar-item">
+          <a href="{{ .Site.Params.githubOrg }}" aria-label="CS3 Community on GitHub"><i class="icon fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

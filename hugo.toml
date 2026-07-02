@@ -1,0 +1,45 @@
+baseURL = "https://www.cs3community.org/"
+title = "CS3 Community"
+
+[languages.en]
+  locale = "en-us"
+  label = "English"
+  weight = 1
+copyright = "CS3 Community"
+
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.163.0"
+  # Defining any mount disables Hugo's implicit defaults, so the standard
+  # directories must be listed explicitly alongside the custom ocm/ mount.
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    # ocm/ is a separately maintained static app; mounted as-is under /ocm/
+    # instead of being copied into static/, so the repo root stays the
+    # single editable source and nothing can drift out of sync.
+    source = "ocm"
+    target = "static/ocm"
+
+[params]
+  subscribeEmail = "cs3-conf2026-iac@cern.ch"
+  githubOrg = "https://github.com/cs3community"
+
+[markup.goldmark.renderer]
+  unsafe = true
