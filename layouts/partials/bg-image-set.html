@@ -1,0 +1,17 @@
+{{- /*
+  Builds a retina-aware CSS background-image declaration: a plain url()
+  fallback plus image-set()/-webkit-image-set() overrides, so 1x screens
+  fetch the small variant and 2x (retina) screens fetch the sharp one.
+
+  Params: path (assets-relative), width1x, width2x, quality (optional).
+  Returns raw CSS text - use inside a style="..." attribute.
+*/ -}}
+{{- $path := .path -}}
+{{- $quality := .quality -}}
+{{- $url1x := partial "img-src.html" (dict "path" $path "width" .width1x "quality" $quality) -}}
+{{- $url2x := partial "img-src.html" (dict "path" $path "width" .width2x "quality" $quality) -}}
+{{- if $url1x -}}
+background-image: url('{{ $url1x }}');
+background-image: -webkit-image-set(url('{{ $url1x }}') 1x, url('{{ $url2x }}') 2x);
+background-image: image-set(url('{{ $url1x }}') 1x, url('{{ $url2x }}') 2x);
+{{- end -}}

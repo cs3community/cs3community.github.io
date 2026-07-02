@@ -8,7 +8,8 @@
     <p class="section-subtitle">Click a year to see the full details.</p>
     <div class="tile-grid">
       {{- range $historical }}
-      <button type="button" class="conf-tile" data-target="conf-modal-{{ .year }}" style="background-image: url('/images/conferences/{{ .image }}');" aria-label="{{ .city }} {{ .year }}">
+      {{- $bg := partial "bg-image-set.html" (dict "path" (printf "images/conferences/%s" .image) "width1x" 240 "width2x" 480) }}
+      <button type="button" class="conf-tile" data-target="conf-modal-{{ .year }}" style="{{ $bg | safeCSS }}" aria-label="{{ .city }} {{ .year }}">
         <span class="conf-tile-year">{{ .year }}</span>
       </button>
       {{- end }}
@@ -21,9 +22,12 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="card">
+      {{- $path := printf "images/conferences/%s" .image }}
+      {{- $src1x := partial "img-src.html" (dict "path" $path "width" 700) }}
+      {{- $src2x := partial "img-src.html" (dict "path" $path "width" 1400) }}
       <div class="card-image">
         <figure class="image is-5by4">
-          <img src="/images/conferences/{{ .image }}" alt="{{ .city }} {{ .year }}">
+          <img src="{{ $src1x }}" srcset="{{ $src1x }} 1x, {{ $src2x }} 2x" alt="{{ .city }} {{ .year }}">
         </figure>
       </div>
       <div class="card-content">

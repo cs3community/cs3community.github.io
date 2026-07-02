@@ -19,8 +19,11 @@
         {{- $registry := .registry }}
         {{- range .slugs }}
           {{- with index $registry . }}
+          {{- $path := printf "images/logos/%s" .logo }}
+          {{- $src1x := partial "img-src.html" (dict "path" $path "width" 160) }}
+          {{- $src2x := partial "img-src.html" (dict "path" $path "width" 320) }}
         <a class="logo-box" href="{{ .url }}" title="{{ .name }}{{ with .description }} — {{ . }}{{ end }}" target="_blank" rel="noopener noreferrer">
-          <img src="/images/logos/{{ .logo }}" alt="{{ .name }}" loading="lazy">
+          <img src="{{ $src1x }}" srcset="{{ $src1x }} 1x, {{ $src2x }} 2x" alt="{{ .name }}" loading="lazy">
         </a>
           {{- end }}
         {{- end }}
@@ -30,7 +33,10 @@
   {{- end }}
 </div>
 {{- else if $conf.logo_strip_image }}
+  {{- $path := printf "images/%s" $conf.logo_strip_image }}
+  {{- $src1x := partial "img-src.html" (dict "path" $path "width" 1000) }}
+  {{- $src2x := partial "img-src.html" (dict "path" $path "width" 2000) }}
 <div class="container has-text-centered logo-strip-fallback">
-  <img src="/images/{{ $conf.logo_strip_image }}" class="img-fluid" alt="{{ $conf.year }} sponsors">
+  <img src="{{ $src1x }}" srcset="{{ $src1x }} 1x, {{ $src2x }} 2x" class="img-fluid" alt="{{ $conf.year }} sponsors">
 </div>
 {{- end -}}

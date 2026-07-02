@@ -19,8 +19,11 @@
     </div>
     <div class="card-image has-text-centered">
       <p><i>{{ .caption }}</i></p>
+      {{ $path := printf "images/%s" .map_image }}
+      {{ $src1x := partial "img-src.html" (dict "path" $path "width" 1200) }}
+      {{ $src2x := partial "img-src.html" (dict "path" $path "width" 2000) }}
       <figure class="image">
-        <img src="/images/{{ .map_image }}" alt="Participation map">
+        <img src="{{ $src1x }}" srcset="{{ $src1x }} 1x, {{ $src2x }} 2x" alt="Participation map">
       </figure>
     </div>
   </div>

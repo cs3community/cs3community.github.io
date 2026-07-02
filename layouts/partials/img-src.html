@@ -1,0 +1,23 @@
+{{- /*
+  Resize an image under assets/ to the given width, converting to webp.
+  Never upscales past the source's native width (clamps instead), since
+  asking for more pixels than the source has would just blur, not sharpen.
+  SVGs are passed through unprocessed - they're already resolution-independent.
+
+  Params: path (assets-relative), width (int), quality (int, default 75).
+  Returns the resource's RelPermalink, or "" if the source is missing.
+*/ -}}
+{{- $path := .path -}}
+{{- $width := .width -}}
+{{- $quality := .quality | default 75 -}}
+{{- with resources.Get $path -}}
+  {{- if strings.HasSuffix $path ".svg" -}}
+    {{- .RelPermalink -}}
+  {{- else -}}
+    {{- $w := $width -}}
+    {{- if lt .Width $width -}}{{ $w = .Width }}{{- end -}}
+    {{- with .Resize (printf "%dx webp q%d" $w $quality) -}}
+      {{- .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
