@@ -21,7 +21,7 @@ entry per year. See the comments at the top of that file for the field
 reference. In short:
 
 - Every entry needs `year`, `city`, `country`, `organizer`, `website`,
-  `image` (a filename under `static/images/conferences/`), and optionally
+  `image` (a filename under `assets/images/conferences/`), and optionally
   `programme`/`doi`.
 - Only the conference matching the *current calendar year* also needs
   `start_date`/`end_date`/`register`/`abstract`/`[conferences.timeline]` -
@@ -30,12 +30,23 @@ reference. In short:
   today's date vs. those fields.
 - `organizers`/`sponsors`/`participants` reference logo slugs from
   `data/partners.toml`. Add the actual logo image files under
-  `static/images/logos/{organizers,sponsors,participants}/` and register
+  `assets/images/logos/{organizers,sponsors,participants}/` and register
   them in `data/partners.toml`, then reference the slugs from the
   conference entry. Until that's done for a given year, `logo_strip_image`
   is shown instead (a flat fallback image).
 
 The "Important links" tiles on the homepage come from `data/links.toml`.
+
+## Images
+
+Conference photos, partner logos and the world-map/sponsors images under
+`assets/images/` are resized and converted to webp automatically at build
+time (see `layouts/partials/img-src.html`) - drop in a normal-sized photo
+or logo and Hugo generates 1x/2x (retina) variants sized for wherever it's
+used (hero background, tile grid, modal, logo strip). No need to
+pre-resize or compress anything yourself; just avoid uploading something
+already tiny/low-res if you want it to look sharp at 2x. SVG logos are
+served as-is (already resolution-independent).
 
 ## Local development
 
@@ -48,7 +59,10 @@ Requires Hugo 0.163+ extended and Go (for module support).
 ## Folder layout
 
 - `content/`, `layouts/`, `data/`, `assets/`, `hugo.toml` - Hugo source.
-- `static/images/` - conference photos, site branding, and partner logos.
+- `assets/images/` - conference photos and partner logos (processed at
+  build time, see Images above).
+- `static/images/site/cs3-logo.png` - the one image left unprocessed
+  (already small, fixed-size, used as-is).
 - `static/vendor/` - vendored Bulma and Font Awesome (no CDN dependency).
 - `ocm/` - a separately maintained static app (its own build, its own
   `main.css`/`js/`). It's mounted into the Hugo build as-is via
