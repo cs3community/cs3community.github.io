@@ -1,0 +1,11 @@
+{{- $start := time.AsTime .start_date -}}
+{{- $end := time.AsTime .end_date -}}
+{{- if eq (.start_date) (.end_date) -}}
+  {{- $start.Format "2 January 2006" -}}
+{{- else if and (eq $start.Year $end.Year) (eq $start.Month $end.Month) -}}
+  {{- printf "%s-%s %s %d" ($start.Format "2") ($end.Format "2") ($start.Format "January") $start.Year -}}
+{{- else if eq $start.Year $end.Year -}}
+  {{- printf "%s - %s %d" ($start.Format "2 January") ($end.Format "2 January") $start.Year -}}
+{{- else -}}
+  {{- printf "%s - %s" ($start.Format "2 January 2006") ($end.Format "2 January 2006") -}}
+{{- end -}}

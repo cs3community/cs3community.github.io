@@ -1,0 +1,36 @@
+{{- $conf := . -}}
+{{- $partners := hugo.Data.partners -}}
+{{- $groups := slice
+  (dict "label" "Organized by" "slugs" ($conf.organizers | default (slice)) "registry" $partners.organizers)
+  (dict "label" "Sponsors" "slugs" ($conf.sponsors | default (slice)) "registry" $partners.sponsors)
+  (dict "label" "With the participation of" "slugs" ($conf.participants | default (slice)) "registry" $partners.participants)
+-}}
+{{- $hasAny := false -}}
+{{- range $groups -}}
+  {{- if gt (len .slugs) 0 -}}{{ $hasAny = true }}{{- end -}}
+{{- end -}}
+{{- if $hasAny }}
+<div class="logo-strip container">
+  {{- range $groups }}
+    {{- if gt (len .slugs) 0 }}
+    <div class="logo-strip-group">
+      <p class="logo-strip-label">{{ .label }}</p>
+      <div class="logo-strip-logos">
+        {{- $registry := .registry }}
+        {{- range .slugs }}
+          {{- with index $registry . }}
+        <a class="logo-box" href="{{ .url }}" title="{{ .name }}{{ with .description }} — {{ . }}{{ end }}" target="_blank" rel="noopener noreferrer">
+          <img src="/images/logos/{{ .logo }}" alt="{{ .name }}" loading="lazy">
+        </a>
+          {{- end }}
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+  {{- end }}
+</div>
+{{- else if $conf.logo_strip_image }}
+<div class="container has-text-centered logo-strip-fallback">
+  <img src="/images/{{ $conf.logo_strip_image }}" class="img-fluid" alt="{{ $conf.year }} sponsors">
+</div>
+{{- end -}}

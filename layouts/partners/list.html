@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ $partners := hugo.Data.partners }}
+{{ $categories := slice
+  (dict "key" "organizers" "label" "Organizers")
+  (dict "key" "sponsors" "label" "Sponsors")
+  (dict "key" "participants" "label" "Participants")
+}}
+{{ $total := 0 }}
+<div class="section reveal">
+  <div class="container content">
+    <h1 class="section-title">{{ .Title }}</h1>
+    {{ .Content }}
+
+    {{ range $categories }}
+      {{ $entries := index $partners .key }}
+      {{ if gt (len $entries) 0 }}
+        {{ $total = add $total (len $entries) }}
+        <h2>{{ .label }}</h2>
+        <div class="partners-grid">
+          {{ range $slug, $p := $entries }}
+          <a class="partners-card" href="{{ $p.url }}" target="_blank" rel="noopener noreferrer">
+            <span class="logo-box"><img src="/images/logos/{{ $p.logo }}" alt="{{ $p.name }}" loading="lazy"></span>
+            <span class="partners-card-name">{{ $p.name }}</span>
+            {{ with $p.description }}<span class="partners-card-description">{{ . }}</span>{{ end }}
+          </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

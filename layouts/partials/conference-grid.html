@@ -1,0 +1,49 @@
+{{- $year := now.Year -}}
+{{- $all := hugo.Data.conferences.conferences -}}
+{{- $historical := where $all "year" "!=" $year -}}
+{{- $historical = sort $historical "year" "desc" -}}
+<div class="section reveal">
+  <div class="container">
+    <h2 class="section-title">All Conferences</h2>
+    <p class="section-subtitle">Click a year to see the full details.</p>
+    <div class="tile-grid">
+      {{- range $historical }}
+      <button type="button" class="conf-tile" data-target="conf-modal-{{ .year }}" style="background-image: url('/images/conferences/{{ .image }}');" aria-label="{{ .city }} {{ .year }}">
+        <span class="conf-tile-year">{{ .year }}</span>
+      </button>
+      {{- end }}
+    </div>
+  </div>
+</div>
+
+{{- range $historical }}
+<div class="modal" id="conf-modal-{{ .year }}">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-5by4">
+          <img src="/images/conferences/{{ .image }}" alt="{{ .city }} {{ .year }}">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <h1>{{ .year }}</h1>
+          <b>{{ .city }}{{ with .country }}, {{ . }}{{ end }}</b>
+          <p>Organized by {{ .organizer }}</p>
+          {{- with .doi }}
+          <hr>
+          <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer"><img src="https://zenodo.org/badge/DOI/{{ . }}.svg" alt="DOI"></a>
+          {{- end }}
+        </div>
+      </div>
+      <footer class="card-footer">
+        {{- with .website }}<a href="{{ . }}" class="card-footer-item" target="_blank" rel="noopener noreferrer">Website</a>{{ end }}
+        {{- with .programme }}<a href="{{ . }}" class="card-footer-item" target="_blank" rel="noopener noreferrer">Programme</a>{{ end }}
+      </footer>
+      {{ partial "logo-strip.html" . }}
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+{{- end }}

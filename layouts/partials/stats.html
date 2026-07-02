@@ -1,0 +1,28 @@
+{{- with .Params.stats -}}
+<div class="hero-body reveal">
+  <div class="card" id="worldmap">
+    <div class="card-content">
+      <div class="content has-text-centered">
+        <img src="/images/site/cs3-logo.png" width="240" height="28" alt="CS3 Community">
+        <div class="columns content">
+          <div class="column">
+            <h4>{{ .institutions }} institutions <i class="icon fas fa-university has-text-link"></i></h4>
+          </div>
+          <div class="column">
+            <h4>{{ .countries }} countries <i class="icon fas fa-flag has-text-link"></i></h4>
+          </div>
+          <div class="column">
+            <h4>{{ .participants }} participants <i class="icon fas fa-users has-text-link"></i></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-image has-text-centered">
+      <p><i>{{ .caption }}</i></p>
+      <figure class="image">
+        <img src="/images/{{ .map_image }}" alt="Participation map">
+      </figure>
+    </div>
+  </div>
+</div>
+{{- end -}}

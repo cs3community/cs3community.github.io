@@ -1,0 +1,65 @@
+{{- $year := now.Year -}}
+{{- $all := hugo.Data.conferences.conferences -}}
+{{- $featured := where $all "year" $year -}}
+{{- if gt (len $featured) 0 -}}
+{{- $conf := index $featured 0 -}}
+<div class="current-edition" style="background-image: url('/images/conferences/{{ $conf.image }}');">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <h1>CS3 Conference {{ $conf.year }}</h1>
+              {{ if and $conf.start_date $conf.end_date }}
+              <b>{{ partial "date-range.html" $conf }}, {{ $conf.city }}{{ with $conf.country }}, {{ . }}{{ end }}</b>
+              {{ else }}
+              <b>{{ $conf.city }}{{ with $conf.country }}, {{ . }}{{ end }}</b>
+              {{ end }}
+              <p>Organized by {{ $conf.organizer }}</p>
+            </div>
+          </div>
+          <footer class="card-footer">
+            {{ with $conf.website }}<a href="{{ . }}" class="card-footer-item">Website</a>{{ end }}
+
+            {{ $showAbstract := false }}
+            {{ if $conf.abstract }}
+              {{ with $conf.timeline }}
+                {{ if and .abstract_open .abstract_close }}
+                  {{ $open := time.AsTime .abstract_open }}
+                  {{ $close := time.AsTime .abstract_close }}
+                  {{ if and (ge now.Unix $open.Unix) (le now.Unix $close.Unix) }}
+                    {{ $showAbstract = true }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+
+            {{ if $showAbstract }}
+            <a href="{{ $conf.abstract }}" class="card-footer-item">Submit abstract</a>
+            {{ else if $conf.programme }}
+            <a href="{{ $conf.programme }}" class="card-footer-item">Programme</a>
+            {{ end }}
+
+            {{ if $conf.register }}
+              {{ $registerOk := true }}
+              {{ if $conf.end_date }}
+                {{ if lt (time.AsTime $conf.end_date).Unix now.Unix }}{{ $registerOk = false }}{{ end }}
+              {{ end }}
+              {{ with $conf.timeline }}
+                {{ if .registration_open }}
+                  {{ if lt now.Unix (time.AsTime .registration_open).Unix }}{{ $registerOk = false }}{{ end }}
+                {{ end }}
+              {{ end }}
+              {{ if $registerOk }}
+            <a href="{{ $conf.register }}" class="card-footer-item">Register</a>
+              {{ end }}
+            {{ end }}
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ partial "logo-strip.html" $conf }}
+{{- end -}}

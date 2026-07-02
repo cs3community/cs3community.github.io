@@ -1,0 +1,14 @@
+<div class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Get Involved</h2>
+    <div class="links-grid">
+      {{ range hugo.Data.links.links }}
+      <a class="links-tile" href="{{ .url }}">
+        <i class="icon fas {{ .icon }}"></i>
+        <span class="links-tile-title">{{ .title }}</span>
+        <span class="links-tile-description">{{ .description }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
