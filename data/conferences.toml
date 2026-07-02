@@ -1,0 +1,151 @@
+# CS3 conference history. One [[conferences]] entry per year.
+#
+# Required on every entry:
+#   year      - int. The conference is featured at the top of the homepage
+#               while year == the current calendar year.
+#   city      - string.
+#   country   - ISO 2-letter code, or "" for a virtual/online edition.
+#   organizer - string, e.g. "University of Oslo".
+#   website   - URL, always shown as a link.
+#   image     - filename under static/images/conferences/.
+#
+# Optional, add only when you have a real value:
+#   programme - URL to the programme/timetable.
+#   doi       - Zenodo DOI (just the id, e.g. "10.5281/zenodo.44783"),
+#               renders a DOI badge. Usually only past conferences have one.
+#
+# Optional, only meaningful for the entry matching the current year (the
+# featured one) - drop them once no longer relevant, no need to keep stale
+# values around:
+#   start_date, end_date - real TOML dates (YYYY-MM-DD). Used to build the
+#               displayed date range and to decide when Register/Abstract
+#               should stop being shown.
+#   register  - URL, shown until end_date passes (and, if
+#               timeline.registration_open is set, only from that date on).
+#   abstract  - URL to the abstract submission form, shown only during
+#               [conferences.timeline]'s abstract_open..abstract_close
+#               window; programme is shown in its place otherwise.
+#   [conferences.timeline]
+#     abstract_open, abstract_close - TOML dates bounding the Abstract link.
+#     registration_open             - TOML date; Register hidden before it.
+#
+# Optional, for the organizer/sponsor/participant logo strip:
+#   organizers, sponsors, participants - arrays of slugs defined in
+#               data/partners.toml. Leave unset/empty until real logos
+#               exist for that year.
+#   logo_strip_image - filename under static/images/, shown instead as a
+#               flat fallback image as long as the three arrays above are
+#               empty.
+
+[[conferences]]
+  year      = 2026
+  city      = "Oslo"
+  country   = "NO"
+  organizer = "University of Oslo"
+  website   = "https://usit.uio.no/cs3"
+  programme = "https://indico.cern.ch/event/1560960/timetable/#20260317"
+  image     = "oslo-2026.jpeg"
+  start_date = 2026-03-17
+  end_date   = 2026-03-19
+  register   = "https://nettskjema.no/a/cs3"
+  logo_strip_image = "site/sponsors-2026.png"
+
+[[conferences]]
+  year      = 2025
+  city      = "Munich"
+  country   = "DE"
+  organizer = "LMU"
+  website   = "https://cs3.physik.lmu.de"
+  programme = "https://indico.cern.ch/event/1467643/program"
+  image     = "munich-2025.jpg"
+
+[[conferences]]
+  year      = 2024
+  city      = "Geneva"
+  country   = "CH"
+  organizer = "CERN"
+  website   = "https://www.cs3community.org/2024"
+  programme = "https://indico.cern.ch/event/1332413/"
+  image     = "geneva-2024.jpeg"
+
+[[conferences]]
+  year      = 2023
+  city      = "Barcelona"
+  country   = "ES"
+  organizer = "ESADE"
+  website   = "https://www.esade.edu/faculty-research/en/institute-innovation-knowledge-management/outreach/cloud-services-for-synchronisation-and-sharing"
+  programme = "https://indico.cern.ch/event/1210538/program"
+  image     = "barcelona-2023.png"
+  doi       = "10.5281/zenodo.7628459"
+
+[[conferences]]
+  year      = 2022
+  city      = "Virtual"
+  country   = ""
+  organizer = "CERN"
+  website   = "https://www.cs3community.org/2022/"
+  programme = "https://indico.cern.ch/e/cs3/2022"
+  image     = "virtual-2022.jpg"
+
+[[conferences]]
+  year      = 2021
+  city      = "Virtual"
+  country   = ""
+  organizer = "CERN"
+  website   = "https://www.cs3community.org/2021/"
+  programme = "https://indico.cern.ch/event/970232/program"
+  image     = "virtual-2021.png"
+
+[[conferences]]
+  year      = 2020
+  city      = "Copenhagen"
+  country   = "DK"
+  organizer = "DEIC"
+  programme = "https://indico.cern.ch/event/854707/program"
+  image     = "copenhagen-2020.png"
+  doi       = "10.5281/zenodo.3601216"
+
+[[conferences]]
+  year      = 2019
+  city      = "Rome"
+  country   = "IT"
+  organizer = "INFN"
+  programme = "https://indico.cern.ch/event/726040/timetable/#20190128"
+  image     = "rome-2019.png"
+  doi       = "10.5281/zenodo.2545482"
+
+[[conferences]]
+  year      = 2018
+  city      = "Krakow"
+  country   = "PL"
+  organizer = "Cyfronet"
+  programme = "https://indico.cern.ch/event/663264/timetable/#20180129.detailed"
+  image     = "krakow-2018.png"
+  doi       = "10.5281/zenodo.1157141"
+
+[[conferences]]
+  year      = 2017
+  city      = "Amsterdam"
+  country   = "NL"
+  organizer = "SURFsara"
+  programme = "https://indico.cern.ch/event/565381/timetable/#all.detailed"
+  image     = "amsterdam-2017.jpg"
+  doi       = "10.5281/zenodo.254064"
+
+[[conferences]]
+  year      = 2016
+  city      = "Zurich"
+  country   = "CH"
+  organizer = "ETH Zurich"
+  image     = "zurich-2016.png"
+  doi       = "10.5281/zenodo.44783"
+
+[[conferences]]
+  year      = 2014
+  city      = "Geneva"
+  country   = "CH"
+  organizer = "CERN"
+  website   = "https://indico.cern.ch/event/336753/"
+  programme = "https://indico.cern.ch/event/336753/"
+  image     = "cern-2014.jpg"
+  doi       = "10.5281/zenodo.2546420"

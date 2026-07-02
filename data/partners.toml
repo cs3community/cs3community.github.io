@@ -1,0 +1,30 @@
+# Registry of organizer/sponsor/participant logos, reused across
+# conference years and listed on /partners/.
+#
+# One [organizers.<slug>], [sponsors.<slug>] or [participants.<slug>] entry
+# per partner. <slug> is what gets referenced from the `organizers`,
+# `sponsors` or `participants` arrays in data/conferences.toml.
+#
+# Required fields on every entry:
+#   name - display name.
+#   url  - link opened when the logo is clicked.
+#   logo - path relative to static/images/logos/<category>/ (add the actual
+#          image file there - the folders exist but are currently empty).
+#
+# Optional:
+#   description - short text shown on /partners/ and in the logo's title
+#                 tooltip on the homepage strip.
+#
+# Example, once a logo file exists at static/images/logos/organizers/uio.svg:
+#
+# [organizers.uio]
+#   name        = "University of Oslo"
+#   description = "Host and organizer of CS3 2026"
+#   url         = "https://www.uio.no"
+#   logo        = "organizers/uio.svg"
+
+[organizers]
+
+[sponsors]
+
+[participants]

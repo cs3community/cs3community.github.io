@@ -1,0 +1,33 @@
+# "Important links" tiles shown on the homepage, right after the current
+# conference section. One [[links]] entry per tile, shown in this order.
+#
+# All fields required:
+#   title       - tile heading.
+#   description - one short line under the title.
+#   url         - can be an absolute URL or a site-relative path (e.g. "/partners/").
+#   icon        - a Font Awesome solid icon class, e.g. "fa-github"
+#                 (see static/vendor/fontawesome-7.3.0).
+
+[[links]]
+  title = "Interest Groups"
+  description = "Self-organized, year-round community activity"
+  url = "https://github.com/cs3community#cs3-community-activities"
+  icon = "fa-users"
+
+[[links]]
+  title = "GitHub Organization"
+  description = "Source code and specifications"
+  url = "https://github.com/cs3community"
+  icon = "fa-github"
+
+[[links]]
+  title = "Open Cloud Mesh"
+  description = "Federation protocol for EFSS platforms"
+  url = "/ocm/"
+  icon = "fa-cloud"
+
+[[links]]
+  title = "Community Partners"
+  description = "Organizers, sponsors and participants over the years"
+  url = "/partners/"
+  icon = "fa-handshake"
