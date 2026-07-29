@@ -38,6 +38,15 @@
 #               empty.
 
 [[conferences]]
+  year      = 2027
+  city      = "Bologna"
+  country   = "IT"
+  organizer = "CNAF - INFN"
+  image     = "bologna-2027.jpg"
+  start_date = 2027-03-09
+  end_date   = 2027-03-12
+
+[[conferences]]
   year      = 2026
   city      = "Oslo"
   country   = "NO"
