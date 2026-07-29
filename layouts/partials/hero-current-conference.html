@@ -1,8 +1,5 @@
-{{- $year := now.Year -}}
-{{- $all := hugo.Data.conferences.conferences -}}
-{{- $featured := where $all "year" $year -}}
-{{- if gt (len $featured) 0 -}}
-{{- $conf := index $featured 0 -}}
+{{- $conf := partial "featured-conference.html" . -}}
+{{- if $conf -}}
 {{- $bg := partial "bg-image-set.html" (dict "path" (printf "images/conferences/%s" $conf.image) "width1x" 1200 "width2x" 2000) -}}
 <div class="current-edition" style="{{ $bg | safeCSS }}">
   <div class="container">

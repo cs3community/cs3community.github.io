@@ -1,0 +1,36 @@
+{{- /*
+  Picks the conference to feature as the homepage hero.
+
+  Normally the entry matching the current calendar year, but it keeps
+  showing through the end of the month *after* its end_date (so a
+  conference that wrapped up in March stays featured through April).
+  Once that window has passed, falls back to the earliest future-year
+  entry (e.g. next year's edition, once announced), if any.
+*/ -}}
+{{- $year := now.Year -}}
+{{- $all := hugo.Data.conferences.conferences -}}
+{{- $conf := "" -}}
+{{- $currentMatches := where $all "year" $year -}}
+{{- if gt (len $currentMatches) 0 -}}
+  {{- $current := index $currentMatches 0 -}}
+  {{- $valid := true -}}
+  {{- if $current.end_date -}}
+    {{- $end := time.AsTime $current.end_date -}}
+    {{- $firstOfMonth := $end.AddDate 0 0 (mul -1 (sub $end.Day 1)) -}}
+    {{- $cutoff := ($firstOfMonth.AddDate 0 2 -1).AddDate 0 0 1 -}}
+    {{- if ge now.Unix $cutoff.Unix -}}
+      {{- $valid = false -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $valid -}}
+    {{- $conf = $current -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $conf -}}
+  {{- $future := where $all "year" "gt" $year -}}
+  {{- $future = sort $future "year" "asc" -}}
+  {{- if gt (len $future) 0 -}}
+    {{- $conf = index $future 0 -}}
+  {{- end -}}
+{{- end -}}
+{{- return $conf -}}

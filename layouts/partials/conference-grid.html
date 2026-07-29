@@ -1,6 +1,9 @@
-{{- $year := now.Year -}}
 {{- $all := hugo.Data.conferences.conferences -}}
-{{- $historical := where $all "year" "!=" $year -}}
+{{- $featured := partial "featured-conference.html" . -}}
+{{- $historical := $all -}}
+{{- if $featured -}}
+  {{- $historical = where $all "year" "!=" $featured.year -}}
+{{- end -}}
 {{- $historical = sort $historical "year" "desc" -}}
 <div class="section reveal">
   <div class="container">
@@ -33,19 +36,19 @@
       <div class="card-content">
         <div class="content">
           <h1>{{ .year }}</h1>
+          {{- with .doi }}
+          <div class="doi-button">
+            <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer"><img src="https://zenodo.org/badge/DOI/{{ . }}.svg" alt="DOI"></a>
+          </div>
+          {{- end }}
           <b>{{ .city }}{{ with .country }}, {{ . }}{{ end }}</b>
           <p>Organized by {{ .organizer }}</p>
-          {{- with .doi }}
-          <hr>
-          <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer"><img src="https://zenodo.org/badge/DOI/{{ . }}.svg" alt="DOI"></a>
-          {{- end }}
         </div>
       </div>
       <footer class="card-footer">
         {{- with .website }}<a href="{{ . }}" class="card-footer-item" target="_blank" rel="noopener noreferrer">Website</a>{{ end }}
         {{- with .programme }}<a href="{{ . }}" class="card-footer-item" target="_blank" rel="noopener noreferrer">Programme</a>{{ end }}
       </footer>
-      {{ partial "logo-strip.html" . }}
     </div>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>

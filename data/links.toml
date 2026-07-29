@@ -18,7 +18,7 @@
   title = "GitHub Organization"
   description = "Source code and specifications"
   url = "https://github.com/cs3community"
-  icon = "fa-github"
+  icon = "fa-code"
 
 [[links]]
   title = "Open Cloud Mesh"

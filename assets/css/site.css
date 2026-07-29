@@ -43,11 +43,11 @@
 }
 
 .current-edition .card {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: color-mix(in srgb, var(--bulma-scheme-main) 70%, transparent);
 }
 
 .current-edition .card-footer {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: color-mix(in srgb, var(--bulma-scheme-main) 50%, transparent);
 }
 
 @media screen and (min-width:1000px) {
@@ -83,6 +83,10 @@
   text-align: center;
   color: #7a7a7a;
   margin-bottom: 2rem;
+}
+
+.doi-button {
+  float: right;
 }
 
 /* Logo strip (organizers / sponsors / participants for the current conference) */
@@ -162,15 +166,15 @@
   gap: 0.5rem;
   padding: 2rem 1rem;
   border-radius: 10px;
-  background-color: #f5f5f5;
-  color: #363636;
+  background-color: var(--bulma-scheme-main-bis);
+  color: var(--bulma-text-strong);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .links-tile:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  color: #363636;
+  color: var(--bulma-text-strong);
 }
 
 .links-tile .icon {
