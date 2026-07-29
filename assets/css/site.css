@@ -11,8 +11,15 @@
 .navbar {
   padding-top: 2rem;
 }
-.navbar-item img {
-  max-height: 8rem;
+.cs3-logo {
+  height: 3.5rem;
+  width: auto;
+}
+
+/* Bulma's .navbar-item img,.navbar-item svg selector (0,1,1) otherwise
+   beats a plain .cs3-logo (0,1,0) and forces its own 1.75rem cap. */
+.navbar-item .cs3-logo {
+  max-height: none;
 }
 
 #worldmap {

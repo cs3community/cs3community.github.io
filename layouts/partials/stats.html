@@ -3,7 +3,10 @@
   <div class="card" id="worldmap">
     <div class="card-content">
       <div class="content has-text-centered">
-        <img src="/images/site/cs3-logo.png" width="240" height="28" alt="CS3 Community">
+        <picture>
+          <source srcset="/images/site/logo-light.svg" media="(prefers-color-scheme: dark)">
+          <img class="cs3-logo" src="/images/site/logo-dark.svg" width="443" height="132" alt="CS3 Community">
+        </picture>
         <div class="columns content">
           <div class="column">
             <h4>{{ .institutions }} institutions <i class="icon fas fa-university has-text-link"></i></h4>

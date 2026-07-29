@@ -1,7 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
-<link rel="icon" href="/images/site/cs3-logo.png">
+<link rel="icon" href="/images/site/logo-dark.svg" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/images/site/logo-light.svg" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" type="text/css" href="/vendor/bulma-1.0.4/css/bulma.min.css">
 <link rel="stylesheet" type="text/css" href="/vendor/fontawesome-7.3.0/css/all.min.css">
 {{ with resources.Get "css/site.css" }}
