@@ -15,14 +15,8 @@
   icon = "fa-users"
 
 [[links]]
-  title = "GitHub Organization"
-  description = "Source code and specifications"
-  url = "https://github.com/cs3community"
-  icon = "fa-code"
-
-[[links]]
   title = "Open Cloud Mesh"
-  description = "Federation protocol for EFSS platforms"
+  description = "Cloud Federation Protocol"
   url = "/ocm/"
   icon = "fa-cloud"
 
@@ -31,3 +25,9 @@
   description = "Organizers, sponsors and participants over the years"
   url = "/partners/"
   icon = "fa-handshake"
+
+[[links]]
+  title = "GitHub Organization"
+  description = "Source code and specifications"
+  url = "https://github.com/cs3community"
+  icon = "fa-code"
