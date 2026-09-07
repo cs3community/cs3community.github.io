@@ -44,7 +44,7 @@
   organizer = "CNAF - INFN"
   image     = "bologna-2027.jpg"
   start_date = 2027-03-09
-  end_date   = 2027-03-12
+  end_date   = 2027-03-11
 
 [[conferences]]
   year      = 2026
