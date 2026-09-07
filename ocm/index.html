@@ -1,355 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <title>OCM Test Suite</title>
-    <link rel="stylesheet" href="./main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A server federation protocol that lets users share files, folders, and other resources across different cloud platforms.">
+  <meta name="generator" content="Astro v6.2.1">
+  <title>OpenCloudMesh</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="_astro/Header.C0ZukeHO.css">
 </head>
-<body>
-    
-<!-- Hero Section -->
-<section class="hero-section" id="heroSection">
-  <div class="container">
-    <!-- Main Content -->
-    <div class="hero-content">
-      <div class="hero-main">
-        <h1 class="hero-title">
-          <span class="gradient-text">Open Cloud Mesh</span>
-        </h1>
-        <p>&nbsp;</p>
-        <p class="hero-subtitle" style="text-align: center;">
-          Open Cloud Mesh (OCM) is a server-to-server federation protocol designed to share resources across independent administrative domains
-        </p>
-      </div>
+<body class="font-sans antialiased bg-gray-950 text-white min-h-screen">
 
-      
-      <div class="resource-cards">
-        
-        <a
-          href="https://github.com/cs3org/OCM-API"
-          class="resource-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="resource-card__icon">
-            <img src="./images/links/github.svg" alt="GitHub Logo" />
-          </div>
-          <div class="resource-card__content">
-            <h3>OCM API</h3>
-            <p>View the specification</p>
-          </div>
-        </a>
-
-        
-        <a
-          href="https://datatracker.ietf.org/doc/draft-ietf-ocm-open-cloud-mesh"
-          class="resource-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="resource-card__icon">
-            <img src="./images/links/ietf.svg" alt="IETF Logo" />
-          </div>
-          <div class="resource-card__content">
-            <h3>IETF Draft</h3>
-            <p>Read the standard</p>
-          </div>
-        </a>
-
-        
-        <a
-          href="https://cs3org.github.io/ocm-test-suite/observatory/"
-          class="resource-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="resource-card__icon">
-            <img src="./images/platforms/ocm-go.svg" alt="Open Cloud Mesh Logo" />
-          </div>
-          <div class="resource-card__content">
-            <h3>OCM Test Suite Observatory</h3>
-            <p>View the latest test run matrix and evidence</p>
-          </div>
-        </a>
-
-        
-        <a
-          href="https://datatracker.ietf.org/wg/ocm/about"
-          class="resource-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="resource-card__icon">
-            <img src="./images/links/ietf.svg" alt="IETF Logo" />
-          </div>
-          <div class="resource-card__content">
-            <h3>IETF Working Group</h3>
-            <p>Join standardization</p>
-          </div>
-        </a>
-
-        
-        <a
-          href="https://www.cs3community.org"
-          class="resource-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="resource-card__icon">
-            <img src="./images/links/cs3.png" alt="CS3 Logo" />
-          </div>
-          <div class="resource-card__content">
-            <h3>CS3 Community</h3>
-            <p>Join the cloud storage sync & share community</p>
-          </div>
-        </a>
-
-        
-        <a
-          href="https://matrix.to/#/#cs3org_OCM:gitter.im"
-          class="resource-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="resource-card__icon">
-            <img src="./images/links/matrix.svg" alt="Matrix Logo" />
-          </div>
-          <div class="resource-card__content">
-            <h3>Matrix Chat</h3>
-            <p>Join discussions</p>
-          </div>
-        </a>
-      </div>
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 border-b border-gray-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-3 group" aria-label="CS3 Community home">
+        <img src="logos/orgs/cs3.png" alt="CS3 Community" class="h-9 w-auto transition-opacity group-hover:opacity-80"> <span class="mr-4">Community</span>
+      </a> <span class="mx-3 text-gray-500">|</span> <img src="logos/brand/ocm-text-horizontal.svg" alt="OpenCloudMesh" class="h-8 w-auto ml-2 transition-opacity group-hover:opacity-80" style="filter: brightness(0) invert(1);">
+      <nav class="hidden md:flex items-center justify-end gap-8 flex-1" aria-label="Main navigation"></nav>
+      <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
-  </div>
-</section>
-
-<section class="partners-section" id="partnersSection">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">
-        <i class="fas fa-handshake"></i>
-        <span>Ecosystem</span>
-      </div>
-      <h2>Our Partners & Sponsors</h2>
-      <p>
-        Organizations shaping and supporting the future of open-source file
-        sharing through development, infrastructure, and funding
-      </p>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-950/95 backdrop-blur-lg border-t border-white/10">
+      <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3" aria-label="Mobile navigation"></nav>
     </div>
+  </header>
 
-    <div class="partners-tabs">
-      <div class="tab active" data-tab="collaborators">Collaborators</div>
-      <div class="tab" data-tab="sponsors">Sponsors</div>
-    </div>
+  <script type="module">
+    const t = document.getElementById("site-header"), n = document.getElementById("mobile-menu-btn"), o = document.getElementById("mobile-menu"), s = document.getElementById("hamburger-icon"), r = document.getElementById("close-icon");
+    function d() {
+      t && (window.scrollY > 20 ? t.classList.add("bg-gray-950/80", "backdrop-blur-lg", "border-b", "border-white/5") : t.classList.remove("bg-gray-950/80", "backdrop-blur-lg", "border-b", "border-white/5"));
+    }
+    window.addEventListener("scroll", d, { passive: !0 });
+    d();
+    n?.addEventListener("click", () => {
+      const e = o?.classList.toggle("hidden") === !1;
+      s?.classList.toggle("hidden", e);
+      r?.classList.toggle("hidden", !e);
+      n.setAttribute("aria-expanded", String(e));
+    });
+  </script>
 
-    <div class="partners-container">
-      <div class="partners-grid active" id="collaboratorsGrid">
-        <div class="partner-card" data-partner="pondersource">
-          <a
-            href="https://pondersource.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="partner-logo"
-          >
-            <img
-              src="./images/collaborators/pondersource.jpeg"
-              alt="PonderSource Logo"
-            />
-          </a>
-          <div class="partner-content">
-            <div class="partner-info">
-              <h3>Ponder Source</h3>
-              <p>
-                A non-profit foundation pioneering Federated Sharing, Federated
-                Bookkeeping, and Bring-your-own-Data architectures. Leading the
-                development and standardization of OCM protocols.
-              </p>
-            </div>
-            <div class="contribution-tags">
-              <span class="tag">API Design</span>
-              <span class="tag">Implementation</span>
-              <span class="tag">Test Suite</span>
-            </div>
+  <main class="box-border flex min-h-screen flex-col pt-16">
+
+    <section class="relative flex min-h-full w-full flex-1 flex-col overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <style>astro-island,astro-slot,astro-static-slot{display:contents}</style>
+        <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script>
+        <script>(()=>{var A=Object.defineProperty;var C=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var l=(i,o,a)=>C(i,typeof o!="symbol"?o+"":o,a);var E=new Set(["__proto__","constructor","prototype"]);{let i={0:t=>y(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},o=t=>{let[h,e]=t;return h in i?i[h](e):void 0},a=t=>t.map(o),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([h,e])=>[h,o(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},p=this.querySelectorAll("template[data-astro-template]");for(let r of p){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let d;await this.hydrator(this)(this.Component,u,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[p,{default:u}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),d=this.getAttribute("component-export")||"default";if(d.includes(".")){this.Component=p;for(let m of d.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${d}`);this.Component=this.Component[m]}}else{if(E.has(d))throw new Error(`Invalid component export path: ${d}`);this.Component=p[d]}return this.hydrator=u,this.hydrate},e,this)}catch(n){console.error("[astro-island] Error hydrating %s",this.getAttribute("component-url"),n)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script>
+        <astro-island uid="2u0Jhe" prefix="r1" component-url="./_astro/ProtocolConstellation.BRIdT8rw.js" component-export="default" renderer-url="./_astro/client.CgtNNQ0u.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;ProtocolConstellation&quot;,&quot;value&quot;:true}" await-children>
+          <div class="relative w-full h-full overflow-hidden">
+            <canvas class="absolute inset-0 w-full h-full" style="touch-action:none" tabindex="0" aria-label="Interactive OCM protocol simulation showing real-time interoperability between research organizations" role="img"></canvas>
+            <canvas class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+            <div class="sr-only" role="list"></div>
+            <div class="sr-only" aria-live="polite" aria-atomic="true"></div>
           </div>
-        </div>
-
-        <div class="partner-card" data-partner="cern">
-          <!-- <span class="partner-type">Infrastructure Partner</span> -->
-          <a
-            href="https://home.cern"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="partner-logo-cern"
-          >
-            <img src="./images/collaborators/cern.svg" alt="CERN Logo" />
-          </a>
-          <div class="partner-content">
-            <div class="partner-info">
-              <h3>CERN</h3>
-              <p>
-                World's leading particle physics laboratory providing
-                cutting-edge infrastructure and expertise in large-scale data
-                sharing solutions for scientific collaboration.
-              </p>
-            </div>
-            <div class="contribution-tags">
-              <span class="tag">API Design</span>
-              <span class="tag">Implementation</span>
-              <span class="tag">Infrastructure</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="partner-card" data-partner="sunet">
-          <a
-            href="https://www.sunet.se"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="partner-logo"
-          >
-            <img src="./images/collaborators/sunet.png" alt="SUNET Logo" />
-          </a>
-          <div class="partner-content">
-            <div class="partner-info">
-              <h3>SUNET</h3>
-              <p>
-                Swedish University Network driving OCM adoption and development
-                in educational institutions, ensuring seamless integration with
-                academic workflows.
-              </p>
-            </div>
-            <div class="contribution-tags">
-              <span class="tag">API Design</span>
-              <span class="tag">Implementation</span>
-              <span class="tag">Education</span>
-            </div>
-          </div>
-        </div>
+          <!--astro:end-->
+        </astro-island>
       </div>
 
-      <div class="partners-grid hidden" id="sponsorsGrid">
-        <div class="partner-card" data-partner="geant">
-          <span class="partner-type">Sponsor</span>
-          <a
-            href="https://geant.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="partner-logo"
-          >
-            <img src="./images/sponsors/geant.svg" alt="GÉANT Logo" />
-          </a>
-          <div class="partner-content">
-            <div class="partner-info">
-              <h3>GÉANT</h3>
-              <p>
-                Europe's leading collaboration on network and related
-                infrastructure, connecting researchers, educators, and
-                innovators globally.
-              </p>
-            </div>
-          </div>
+      <!-- Ambient cyan gradient overlay -->
+      <div class="absolute inset-0 z-[1] pointer-events-none" style="background: radial-gradient(ellipse 120% 80% at 25% 30%, hsla(186, 55%, 50%, 0.30) 0%, transparent 60%), radial-gradient(ellipse 100% 60% at 75% 70%, hsla(180, 50%, 45%, 0.18) 0%, transparent 55%), radial-gradient(ellipse 80% 50% at 50% 50%, hsla(190, 45%, 48%, 0.10) 0%, transparent 70%);"></div>
+
+      <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-6 py-8 pointer-events-none">
+        <div class="mb-10 w-full max-w-3xl text-center">
+          <p class="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-sky-300/80">
+            Open Protocol For Cloud Federation
+          </p>
+          <h1 class="text-5xl font-semibold tracking-[-0.045em] text-white drop-shadow-[0_8px_28px_rgba(8,15,40,0.45)] md:text-6xl lg:text-7xl">
+            OpenCloudMesh
+          </h1>
+          <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-slate-200/92 drop-shadow-[0_6px_20px_rgba(8,15,40,0.4)] md:text-xl">
+            Federated resource sharing across independent clouds.
+          </p>
         </div>
 
-        <div class="partner-card" data-partner="sciencemesh">
-          <span class="partner-type">Sponsor</span>
-          <a
-            href="https://sciencemesh.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="partner-logo"
-          >
-            <img
-              src="./images/sponsors/sciencemesh.svg"
-              alt="ScienceMesh Logo"
-            />
-          </a>
-          <div class="partner-content">
-            <div class="partner-info">
-              <h3>ScienceMesh</h3>
-              <p>
-                Building the federated science cloud mesh, connecting research
-                institutions and enabling seamless data sharing across borders.
-              </p>
-            </div>
-          </div>
-        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
 
-        <div class="partner-card" data-partner="nlnet">
-          <span class="partner-type">Sponsor</span>
-          <a
-            href="https://nlnet.nl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="partner-logo"
-          >
-            <img src="./images/sponsors/nlnet.svg" alt="NLnet Logo" />
-          </a>
-          <div class="partner-content">
-            <div class="partner-info">
-              <h3>NLnet</h3>
-              <p>
-                Supporting organizations and individuals that contribute to an
-                open information society, fostering innovation in technology.
-              </p>
-            </div>
+          <div class="group flex flex-col items-center text-center bg-[rgba(190,215,235,0.14)] border border-white/15 rounded-xl p-5 hover:border-white/30 hover:-translate-y-1 transition-all duration-200 pointer-events-auto">
+            <a href="https://datatracker.ietf.org/doc/draft-ietf-ocm-open-cloud-mesh/" target="_blank" rel="noopener noreferrer" class="flex w-full flex-col items-center text-center no-underline">
+              <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg bg-[rgba(140,190,225,0.36)] border border-white/20 p-2">
+                <img src="logos/orgs/ietf.svg" alt="IETF Draft" class="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-opacity">
+              </div>
+              <h3 class="text-white font-semibold text-base mb-1">IETF Draft</h3>
+              <p class="text-gray-400 text-xs leading-relaxed">Read the standard</p>
+            </a>
           </div>
-        </div>
 
-        <div class="partner-card" data-partner="sta">
-          <span class="partner-type">Sponsor</span>
-          <a
-            href="https://www.sovereign.tech"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="partner-logo"
-          >
-            <img
-              src="./images/sponsors/STA-Logo-Default-Black-RGB.svg"
-              alt="Sovereign Tech Agency Logo"
-              class="sta-logo-primary"
-            />
-            <img
-              src="./images/sponsors/ST-Fund-Logo-Default-Black-RGB.svg"
-              alt=""
-              aria-hidden="true"
-              class="sta-logo-hover"
-            />
-          </a>
-          <div class="partner-content">
-            <div class="partner-info">
-              <h3>Sovereign Tech Agency</h3>
-              <p>
-                Investing in open digital infrastructure through the Sovereign
-                Tech Fund, supporting critical open source projects and
-                maintainers.
-              </p>
-            </div>
+          <div class="group flex flex-col items-center text-center bg-[rgba(190,215,235,0.14)] border border-white/15 rounded-xl p-5 hover:border-white/30 hover:-translate-y-1 transition-all duration-200 pointer-events-auto">
+            <a href="https://cs3org.github.io/OCM-API/" target="_blank" rel="noopener noreferrer" class="flex w-full flex-col items-center text-center no-underline">
+              <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg bg-[rgba(140,190,225,0.36)] border border-white/20 p-2">
+                <img src="logos/brand/ocm-logo.svg" alt="OCM API" class="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-opacity">
+              </div>
+              <h3 class="text-white font-semibold text-base mb-1">OCM API</h3>
+              <p class="text-gray-400 text-xs leading-relaxed">View the specification</p>
+            </a>
           </div>
+
+          <div class="group flex flex-col items-center text-center bg-[rgba(190,215,235,0.14)] border border-white/15 rounded-xl p-5 hover:border-white/30 hover:-translate-y-1 transition-all duration-200 pointer-events-auto">
+            <a href="https://matrix.to/#/#ocm:matrix.org" target="_blank" rel="noopener noreferrer" class="flex w-full flex-col items-center text-center no-underline">
+              <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg bg-[rgba(140,190,225,0.36)] border border-white/20 p-2">
+                <img src="logos/matrix.svg" alt="Matrix Chat" class="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-opacity filter brightness-0 invert">
+              </div>
+              <h3 class="text-white font-semibold text-base mb-1">Matrix Chat</h3>
+              <p class="text-gray-400 text-xs leading-relaxed">Join discussions</p>
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </div>
-</section>
-    
-<!-- Add these at the bottom before closing body tag -->
-<script type="module" src="./js/main.js"></script> 
+    </section>
 
-<template id="error-message-template">
-  <div class="error-message">
-    <p class="error-text"></p>
-    <button class="retry-button">Try Again</button>
-  </div>
-</template>
+    <section class="relative bg-gray-950 border-t border-white/10 px-6 py-16">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 text-center">
+          <p class="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-sky-300/80">Ecosystem</p>
+          <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Collaborators and Sponsors</h2>
+          <p class="mx-auto mt-3 max-w-3xl text-base text-gray-400">Organizations shaping and supporting the future of open-source file sharing via OCM through development, infrastructure, and funding.</p>
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-<template id="loading-spinner-template">
-  <div class="loading-spinner">
-    <div class="spinner"></div>
-  </div>
-</template>
+          <a href="https://home.cern" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/orgs/cern.svg" alt="CERN logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">CERN</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">World's leading particle physics laboratory providing infrastructure for large-scale data management.</p>
+          </a>
+
+          <a href="https://commission.europa.eu" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/sponsors/ec-logo.svg" alt="European Commission logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">European Commission</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">Funding research and innovation in open digital infrastructure across Europe.</p>
+          </a>
+
+          <a href="https://geant.org" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/sponsors/geant.svg" alt="GÉANT logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">GÉANT</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">Europe's leading collaboration on network and related infrastructure for research and education.</p>
+          </a>
+
+          <a href="https://nlnet.nl" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/sponsors/nlnet.svg" alt="NLnet logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">NLnet</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">Supporting organizations and individuals contributing to an open information society.</p>
+          </a>
+
+          <a href="https://owncloud.com" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/sponsors/owncloud-logo.svg" alt="ownCloud logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">ownCloud</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">Open source content collaboration platform supporting OCM adoption in production deployments.</p>
+          </a>
+
+          <a href="https://pondersource.com" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/collaborators/pondersource.jpeg" alt="PonderSource logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">PonderSource</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">Non-profit foundation pioneering Federated Sharing and leading development of OCM protocols.</p>
+          </a>
+
+          <a href="https://www.sovereign.tech" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/sponsors/sovereign-tech-agency.svg" alt="Sovereign Tech Agency logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">Sovereign Tech Agency</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">Investing in open digital infrastructure through the Sovereign Tech Fund.</p>
+          </a>
+
+          <a href="https://www.sunet.se" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center rounded-xl border border-white/15 bg-[rgba(190,215,235,0.08)] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-white/30">
+            <div class="mb-4 flex h-16 w-full items-center justify-center rounded-lg bg-white p-3">
+              <img src="logos/collaborators/sunet.png" alt="SUNET logo" class="h-full w-auto max-w-full object-contain">
+            </div>
+            <h3 class="text-sm font-semibold text-white">SUNET</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-400">Swedish University Network driving OCM adoption and integration in academic workflows.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="_astro/BaseLayout.astro_astro_type_script_index_0_lang.Dvb-lSbO.js"></script>
 </body>
 </html>
