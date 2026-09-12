@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>OpenCloudMesh — History</title>
+  <meta name="description" content="A server federation protocol that lets users share files, folders, and other resources across different cloud platforms.">
+  <title>OpenCloudMesh — About and History</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="_astro/Header.C0ZukeHO.css">
 
   <style>
     :root {
@@ -54,62 +60,6 @@
     a:hover {
       color: var(--link-hover);
       text-decoration: underline;
-    }
-
-    /* ------------------------------------------------------------
-       Header
-       ------------------------------------------------------------ */
-
-    .site-header {
-      width: 100%;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-    }
-
-    .header-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 22px 28px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .cs3-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text);
-      font-size: 1.15rem;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    /*
-     * The CS3 logo is normally already available from the surrounding
-     * CS3 Community site. Keep this path relative so this page can live
-     * directly in /ocm/ without introducing another copy of the asset.
-     *
-     * If your existing index.html uses a different CS3 logo path,
-     * substitute that path here.
-     */
-    .cs3-logo {
-      height: 30px;
-      width: auto;
-      display: block;
-    }
-
-    .brand-separator {
-      width: 1px;
-      height: 30px;
-      background: var(--border);
-      margin: 0 2px;
-    }
-
-    .ocm-logo {
-      height: 34px;
-      width: auto;
-      display: block;
     }
 
     /* ------------------------------------------------------------
@@ -280,28 +230,6 @@
     }
 
     @media (max-width: 700px) {
-      .header-inner {
-        padding: 18px 20px;
-        gap: 13px;
-      }
-
-      .cs3-brand {
-        font-size: 1rem;
-      }
-
-      .cs3-logo {
-        height: 25px;
-      }
-
-      .ocm-logo {
-        height: 28px;
-        max-width: 180px;
-      }
-
-      .brand-separator {
-        height: 26px;
-      }
-
       main {
         padding: 42px 20px 60px;
       }
