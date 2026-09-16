@@ -38,7 +38,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
     target = "static/ocm"
 
 [params]
-  subscribeEmail = "cs3-conf2026-iac@cern.ch"
+  subscribeEmail = "cs3-conf2027-iac@cern.ch"
   githubOrg = "https://github.com/cs3community"
 
 [markup.goldmark.renderer]
