@@ -1,5 +1,5 @@
 baseURL = "https://www.cs3community.org/"
-title = "CS3 Community"
+title = "CS3 - Data Services for Open Science, Society and Industry"
 
 [languages.en]
   locale = "en-us"
