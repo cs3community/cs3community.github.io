@@ -8,7 +8,7 @@ stats:
   map_image: "site/world-map-2018.png"
 ---
 
-## Cloud Storage Services for Synchronization and Sharing (CS3)
+## CS3 - Data Services for Open Science, Society and Industry
 
 This is a community of providers, developers and users of innovative storage and sync&share systems. The CS3 services are integrated with user environments and higher-level application services. CS3 reports on the progress in data science at all levels: local laboratories, regional collaborations and global science. CS3 applications range from innovative big-data analysis to science outreach and education.
 
