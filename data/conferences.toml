@@ -42,9 +42,14 @@
   city      = "Bologna"
   country   = "IT"
   organizer = "CNAF - INFN"
+  website   = "https://web.infn.it/cs3-2027"
   image     = "bologna-2027.jpg"
   start_date = 2027-03-09
   end_date   = 2027-03-11
+  abstract  = "https://indico.cern.ch/event/1744148/abstracts/"
+  [conferences.timeline]
+    abstract_open  = 2026-10-27
+    abstract_close = 2027-12-07
 
 [[conferences]]
   year      = 2026
